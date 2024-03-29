@@ -20,7 +20,7 @@ class PID{
 
     public:
 
-    PID (float MAX_SIGNAL_VALUE, float MIN_SIGNAL_VALUE);
+    PID (float MIN_SIGNAL_VALUE, float MAX_SIGNAL_VALUE);
 
     void ParamSet(float Kp, float Ki, float Kd, float Ti=1, float Td=1);
     void updtError(double Setpoint, double valueNow);  
