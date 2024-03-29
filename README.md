@@ -5,6 +5,8 @@ The best library for manual PID control, it is easy and straight forward to use!
 
 There is an example to use with arduino and proteus, make sure you have the arduino library for proteus, the proteus file has an website of it in the board
 
+The example also shows how it is to be implemented, you can use it in any platform
+
 Initialize:
 
 class PID Test_PID(1024, 0);  // Set a class for the use and give it the MAX and Minimium values for control
