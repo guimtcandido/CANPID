@@ -24,7 +24,6 @@ class PID{
 
     void ParamSet(float Kp, float Ki, float Kd, float Ti=1, float Td=1);
     void updtError(double Setpoint, double valueNow);  
-    uint8_t antiWindup_Check();
     uint8_t OutSignal(); 
     uint32_t Control();
     void resetPID();
