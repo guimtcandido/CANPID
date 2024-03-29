@@ -26,7 +26,6 @@ void PID ::updtError(double Setpoint, double valueNow)
 
 uint8_t PID ::OutSignal()
 {
-    INTEGRAL_VALUE = signalError_INTEGRAL;
 
     CntrlSignal = Kp * signalError + Ki * signalError_INTEGRAL + Kd * signalError_DIFERENTIAL;
 
@@ -44,9 +43,20 @@ uint8_t PID ::OutSignal()
 
     return true;
 }
+
+float PID ::getError()
+{
+    return signalError;
+}
+
 float PID ::getIntegral()
 {
-    return INTEGRAL_VALUE;
+    return signalError_INTEGRAL;
+}
+
+float PID ::getDiferential()
+{
+    return signalError_DIFERENTIAL;
 }
 
 uint32_t PID ::Control()

@@ -30,6 +30,9 @@ class PID{
     float getKp();
     float getKi();
     float getKd();
+    float getError();
+    float getIntegral();
+    float getDiferential();
 };
 
 
