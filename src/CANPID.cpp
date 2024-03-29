@@ -1,4 +1,4 @@
-#include "CANDPID.h"
+#include "CANPID.h"
 
 PID::PID(float MAX_SIGNAL_VALUE, float MIN_SIGNAL_VALUE)
 {

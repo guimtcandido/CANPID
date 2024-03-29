@@ -1,6 +1,6 @@
-#ifndef CANDPID_H
+#ifndef CANPID_H
 
-#define CANDPID_H
+#define CANPID_H
 #include <Arduino.h>
 
 class PID{
