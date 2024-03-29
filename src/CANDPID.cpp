@@ -1,6 +1,6 @@
 #include "CANDPID.h"
 
-PID::PID(uint16_t MAX_SIGNAL_VALUE, uint16_t MIN_SIGNAL_VALUE)
+PID::PID(float MAX_SIGNAL_VALUE, float MIN_SIGNAL_VALUE)
 {
     this->MAX_SIGNAL_VALUE = MAX_SIGNAL_VALUE;
     this->MIN_SIGNAL_VALUE = MIN_SIGNAL_VALUE;
@@ -33,15 +33,16 @@ uint8_t PID ::OutSignal()
     {
         signalError_INTEGRAL -= signalError;
         CntrlSignal = MAX_SIGNAL_VALUE;
+        return 2;
     }
     else if (CntrlSignal < MIN_SIGNAL_VALUE)
     {
         signalError_INTEGRAL -= signalError;
         CntrlSignal = MIN_SIGNAL_VALUE;
-        return false;
+        return 0;
     }
 
-    return true;
+    return 1;
 }
 
 float PID ::getError()
@@ -59,7 +60,7 @@ float PID ::getDiferential()
     return signalError_DIFERENTIAL;
 }
 
-uint32_t PID ::Control()
+float PID ::Control()
 {
 
     return CntrlSignal;
