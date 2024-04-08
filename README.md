@@ -7,12 +7,13 @@ There is an example to use with arduino and proteus, make sure you have the ardu
 
 The example also shows how it is to be implemented, you can use it in any platform
 
-Initialize:
+### Initialize:
 
+```c
 class PID Test_PID(1024, 0);  // Set a class for the use and give it the MAX and Minimium values for control
-
-Mandatory Calls:
-
+```
+### Mandatory Calls:
+```c
 // Set gains for the control system, if the acquisition time isn't the same over the time, you can set the delay time which the control will adapt to it
 
 Test_PID.ParamSet(Kp, Ki, Kd, ti, td); 
@@ -28,10 +29,10 @@ Test_PID.OutSignal();
 //Returns Output Control Value
 
 Test_PID.Control();
+```
 
-
-Systems Analysis Calls:
-
+### Systems Analysis Calls:
+```c
 //This calls are very usefull to understand the behaviour of the systems indepentely and helps on tuning
 
 //Returns Error
@@ -45,3 +46,4 @@ float getIntegral();
 //Returns Diferential Error
 
 float getDiferential();
+```
